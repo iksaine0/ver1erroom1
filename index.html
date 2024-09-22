@@ -12,15 +12,18 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         #console {
-            white-space: pre;
-            font-size: 18px;
-            line-height: 1.5;
-            position: relative;
-            z-index: 1;
-            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid lime;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
         }
         .highlight {
             color: red;
@@ -39,7 +42,6 @@
             color: lime;
             opacity: 0.1;
             position: absolute;
-            bottom: 100%; /* Start from above the screen */
             white-space: nowrap;
             animation: fall linear infinite;
         }
@@ -62,4 +64,21 @@
         <div>Hacking mainframe...</div>
         <div>Accessing user credentials...</div>
         <div>Hack successful!</div>
-        <div class
+        <div class="highlight">Hello Danish Ammar Felani.</div>
+        <div class="highlight">Welcome to the FIRST VERSION OF ERROR ROOM</div>
+    </div>
+    <script>
+        // Matrix background effect
+        const matrix = document.querySelector('.matrix');
+        const numberOfSpans = 100; // Number of falling characters
+        for (let i = 0; i < numberOfSpans; i++) {
+            const span = document.createElement('span');
+            span.textContent = Math.random() < 0.5 ? '1' : '0';
+            span.style.left = `${Math.random() * 100}vw`;
+            span.style.animationDuration = `${Math.random() * 5 + 2}s`; // Random duration for each span
+            span.style.fontSize = `${Math.random() * 20 + 10}px`; // Random font size for diversity
+            matrix.appendChild(span);
+        }
+    </script>
+</body>
+</html>

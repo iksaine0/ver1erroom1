@@ -7,11 +7,11 @@
     <style>
         body {
             background-color: black;
-            overflow: hidden;
             color: lime;
             font-family: 'Courier New', Courier, monospace;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
             position: relative;
         }
         #console {
@@ -38,16 +38,14 @@
         .matrix span {
             color: lime;
             opacity: 0.1;
-            animation: fall 5s linear infinite;
             position: absolute;
+            bottom: 100%; /* Start from above the screen */
+            white-space: nowrap;
+            animation: fall linear infinite;
         }
         @keyframes fall {
-            0% {
-                top: -20%;
-            }
-            100% {
-                top: 100%;
-            }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
         }
     </style>
 </head>
@@ -62,4 +60,6 @@
         <div>Threat detected: malware...</div>
         <div>Injecting malicious code...</div>
         <div>Hacking mainframe...</div>
-  
+        <div>Accessing user credentials...</div>
+        <div>Hack successful!</div>
+        <div class
